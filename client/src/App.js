@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Page Count: {count}</h1>
+      <h1>Count: {count}</h1>
     </div>
   );
 }
