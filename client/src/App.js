@@ -1,18 +1,17 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import Homepage from "./components/Homepage";
+import { Switch, Route} from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
 
   return (
-    <div className="App">
-      <h1>Count: {count}</h1>
-    </div>
+      <Switch>
+
+        <Route path="/">
+          <Homepage />
+        </Route>
+        
+      </Switch>
   );
 }
 
