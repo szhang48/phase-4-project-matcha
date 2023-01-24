@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2023_01_24_161531) do
   create_table "users", force: :cascade do |t|
     t.integer "like"
     t.integer "match"
+    t.integer "post_id"
+    t.integer "bio_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
