@@ -1,13 +1,172 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #FFFFFE;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Nav Bar Styling */
+.nav {
+  display: flex;
+  height: 100px;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.nav-item-container {
+  display: flex;
+  flex-direction: row;
+  margin-right: 400px;
+}
+
+.title-logo {
+  color: #92AA83;
+  font-family: system-ui;
+  font-weight: 500;
+  letter-spacing: 5px;
+  margin-right: 75px;
+}
+
+.nav-items {
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  margin-right: 75px;
+  letter-spacing: 2.5px;
+  font-size: 17px;
+}
+
+.login-signup {
+  color: #FFFFFF;
+  margin-left: 600px;
+  padding: 15px;
+  background-color: #92AA83;
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #92AA83;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+
+/* Hero Image - Landing Page Styling */
+.home {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.the-sun.com/wp-content/uploads/sites/6/2022/07/RL-offplat-first-date-1.jpg?strip=all&quality=100&w=1920&h=1080&crop=1");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: rgba(0,0,0,0.5);
+  
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Landing Page Content Styling */
+
+.landing-page-text-content-container {
+  position: relative;
+  width: 300px;
+  left: 500px;
+  top: 200px;
+}
+
+.landing-page-text-content-h3 {
+  color: #F1F7EE;
+  font-weight: 600;
+  font-family: system-ui;
+  margin-bottom: 15px;
+  font-size: 1.2cm;
+}
+
+.landing-page-text-content-p {
+  color: #F1F7EE;
+  font-family: system-ui;
+  font-size: 1.2em;
+}
+
+.landing-page-second-content-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  font-family: system-ui;
+  align-items: center;
+  left: 900px;
+  bottom: 100px;
+  width: 600px;
+  height: 400px;
+  /* opacity: 0.8; */
+  background-color: #E0EDC5;
+
+  border-radius: 20px;
+}
+
+.landing-page-second-p-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.landing-page-second-content-container-p {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #065143;
+}
+
+.get-started {
+  margin-top: 20px;
+}
+
+/* Button Styling */
+
+.btn {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #92AA83;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
 }
