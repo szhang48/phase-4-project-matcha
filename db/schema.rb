@@ -26,13 +26,6 @@ ActiveRecord::Schema.define(version: 2023_01_25_201757) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "login_signups", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "name"
     t.string "content"
