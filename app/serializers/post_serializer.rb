@@ -1,3 +1,4 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :picture, :like
+  attributes :id, :name, :content, :picture
+  
 end

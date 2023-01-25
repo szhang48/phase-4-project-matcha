@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     
     def index 
-        render json: User.all 
+        render json: User.all
     end
 
     def create 
@@ -11,6 +11,6 @@ class UsersController < ApplicationController
 
     private 
     def user_params
-        parmas.permit(:like, :match)
+        params.permit(:name, :email, :password)
     end
 end
