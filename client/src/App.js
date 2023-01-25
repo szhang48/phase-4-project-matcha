@@ -4,6 +4,7 @@ import { Switch, Route} from 'react-router-dom'
 import Homepage from "./components/Homepage"
 import Login from "./components/Login"
 import Signup from "./components/Signup"
+import Feed from "./components/feed_components/Feed"
 
 function App() {
 
@@ -20,6 +21,10 @@ function App() {
         
         <Route path="/signup">
           <Signup />
+        </Route>
+
+        <Route path="/feed">
+          <Feed />
         </Route>
       </Switch>
   );

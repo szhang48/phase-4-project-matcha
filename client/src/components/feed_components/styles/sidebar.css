@@ -1,0 +1,31 @@
+.side-bar {
+    flex: 2;
+    height: calc(100vh - 50px);
+    background-color: #FFFFFE;
+    border-right: 1px solid grey;
+}
+
+.side-bar-wrapper {
+    padding: 20px;
+}
+
+.side-bar-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.side-bar-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.side-bar-icon {
+    margin-left: 15px;
+}
+
+.side-bar-hr {
+    margin: 20px 0;
+}
