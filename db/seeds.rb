@@ -36,13 +36,12 @@ p6 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
 
 puts "Seeding users"
 
-User.create(like: 0, match: 0, post_id: p1.id, bio_id: b1.id)
-User.create(like: 0, match: 0, post_id: p2.id, bio_id: b2.id)
-User.create(like: 0, match: 0, post_id: p3.id, bio_id: b3.id)
-User.create(like: 0, match: 0, post_id: p4.id, bio_id: b4.id)
-User.create(like: 0, match: 0, post_id: p5.id, bio_id: b5.id)
-User.create(like: 0, match: 0, post_id: p6.id, bio_id: b6.id)
-    
+User.create(name: "Sandy", email: "abc@gmail.com", post_id: p1.id, bio_id: b1.id)
+User.create(name: "Sam", email: "abc@gmail.com", post_id: p2.id, bio_id: b2.id)
+User.create(name: "Kamran", email: "abc@gmail.com", post_id: p3.id, bio_id: b3.id)
+User.create(name: "Bob", email: "abc@gmail.com", post_id: p4.id, bio_id: b4.id)
+User.create(name: "Rob", email: "abc@gmail.com", post_id: p5.id, bio_id: b5.id)
+User.create(name: "Sob", email: "abc@gmail.com", post_id: p6.id, bio_id: b6.id)
 puts 'Done planting'
 
 
