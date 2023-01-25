@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2023_01_25_201757) do
+ActiveRecord::Schema.define(version: 2023_01_25_200109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,13 +22,6 @@ ActiveRecord::Schema.define(version: 2023_01_25_201757) do
     t.string "school"
     t.string "occupation"
     t.string "dating_preference"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "login_signups", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

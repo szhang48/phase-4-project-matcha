@@ -34,7 +34,7 @@ p4 = Post.create(name: 'hi', content:'hi', picture: 'hi')
 p5 = Post.create(name: 'hi', content:'hi', picture: 'hi')
 p6 = Post.create(name: 'hi', content:'hi', picture: 'hi')
 
-puts "Seeding Likes"
+
 
 puts "Seeding users"
 
