@@ -24,13 +24,13 @@ function Signup() {
         fetch("/users", {
             method: "POST",
             headers: {
-                "Accept": "application/json",
+                // "Accept": "application/json",
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name: username,
-                email: email,
-                password: password
+                name: "",
+                email:"",
+                password: ""
             })
         })
     }
