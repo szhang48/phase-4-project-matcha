@@ -27,21 +27,23 @@ b6 = Bio.create(name: 'Jennifer', location: 'Seattle', description: 'hi', school
 
 puts "Seeding posts"
 
-p1 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
-p2 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
-p3 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
-p4 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
-p5 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
-p6 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
+p1 = Post.create(name: 'hi', content:'hi', picture: 'hi')
+p2 = Post.create(name: 'hi', content:'hi', picture: 'hi')
+p3 = Post.create(name: 'hi', content:'hi', picture: 'hi')
+p4 = Post.create(name: 'hi', content:'hi', picture: 'hi')
+p5 = Post.create(name: 'hi', content:'hi', picture: 'hi')
+p6 = Post.create(name: 'hi', content:'hi', picture: 'hi')
+
+puts "Seeding Likes"
 
 puts "Seeding users"
 
-User.create(name: "Sandy", email: "abc@gmail.com", post_id: p1.id, bio_id: b1.id)
-User.create(name: "Sam", email: "abc@gmail.com", post_id: p2.id, bio_id: b2.id)
-User.create(name: "Kamran", email: "abc@gmail.com", post_id: p3.id, bio_id: b3.id)
-User.create(name: "Bob", email: "abc@gmail.com", post_id: p4.id, bio_id: b4.id)
-User.create(name: "Rob", email: "abc@gmail.com", post_id: p5.id, bio_id: b5.id)
-User.create(name: "Sob", email: "abc@gmail.com", post_id: p6.id, bio_id: b6.id)
+User.create(name: "Sandy", email: "abc@gmail.com", password: "123", post_id: p1.id, bio_id: b1.id)
+User.create(name: "Sam", email: "abc@gmail.com", password: "1234", post_id: p2.id, bio_id: b2.id)
+User.create(name: "Kamran", email: "abc@gmail.com", password: "1235", post_id: p3.id, bio_id: b3.id)
+User.create(name: "Bob", email: "abc@gmail.com", password: "1236", post_id: p4.id, bio_id: b4.id)
+User.create(name: "Rob", email: "abc@gmail.com", password: "1237", post_id: p5.id, bio_id: b5.id)
+User.create(name: "Sob", email: "abc@gmail.com", password: "1238", post_id: p6.id, bio_id: b6.id)
 puts 'Done planting'
 
 
