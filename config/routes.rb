@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :login_signups
   resources :posts
   resources :users
   resources :bios

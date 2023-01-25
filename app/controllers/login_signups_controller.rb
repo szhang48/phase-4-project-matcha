@@ -1,0 +1,2 @@
+class LoginSignupsController < ApplicationController
+end

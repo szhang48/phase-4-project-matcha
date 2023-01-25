@@ -24,6 +24,11 @@ function Login() {
         setClickSignup(!clickSignup)
     }
 
+    function handleLogin(e) {
+        e.preventDefault()
+        
+    }
+
     return(
         <>
         <div className="login">
