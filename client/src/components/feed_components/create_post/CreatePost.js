@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './createpost.css'
 import { BiPhotoAlbum, BiBookAdd, BiLocationPlus } from "react-icons/bi";
 
 function CreatePost() {
+    const [content, setContent] = useState("")
+
+    function createPost() {
+        fetch("/posts", {
+            method: "POST",
+            headers: {
+                "Accept": 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                content: content,
+                
+            })
+        })
+    }
+
+    console.log(content)
+
     return (
         <div className="create-post-container">
             <div className="create-post">
                 <div className="create-post-wrapper">
                     <div className="create-post-top">
                         <img src="https://wallpapers.com/images/featured/4co57dtwk64fb7lv.jpg" className="create-post-profile-img"></img>
-                        <input placeholder="Share your interests" 
+                        <input onChange={(e) => {setContent(e.target.value)}} placeholder="Share your interests" 
                         className="create-post-input"
                         />                
                     </div>

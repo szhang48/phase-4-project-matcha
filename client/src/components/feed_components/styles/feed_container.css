@@ -1,7 +1,20 @@
 .feed-container {
     flex: 5;
+    overflow-y: scroll;
 }
 
 .feed-wrapper {
     
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: grey;
 }

@@ -4,7 +4,6 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :content
       t.string :picture
-      t.boolean :like
 
       t.timestamps
     end
