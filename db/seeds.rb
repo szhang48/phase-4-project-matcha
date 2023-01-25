@@ -27,12 +27,12 @@ b6 = Bio.create(name: 'Jennifer', location: 'Seattle', description: 'hi', school
 
 puts "Seeding posts"
 
-p1 = Post.create(title: 'hi', description:'hi', picture: 'hi', like: 6)
-p2 = Post.create(title: 'hi', description:'hi', picture: 'hi', like: 5)
-p3 = Post.create(title: 'hi', description:'hi', picture: 'hi', like: 4)
-p4 = Post.create(title: 'hi', description:'hi', picture: 'hi', like: 3)
-p5 = Post.create(title: 'hi', description:'hi', picture: 'hi', like: 2)
-p6 = Post.create(title: 'hi', description:'hi', picture: 'hi', like: 1)
+p1 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
+p2 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
+p3 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
+p4 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
+p5 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
+p6 = Post.create(name: 'hi', content:'hi', picture: 'hi', like: false)
 
 puts "Seeding users"
 

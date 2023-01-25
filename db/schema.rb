@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2023_01_24_161531) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
+    t.string "name"
+    t.string "content"
     t.string "picture"
-    t.integer "like"
+    t.boolean "like"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
