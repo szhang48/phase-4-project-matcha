@@ -11,6 +11,6 @@ class UsersController < ApplicationController
 
     private 
     def user_params
-        parmas.permit(:like, :match)
+        parmas.permit(:name, :email, :password)
     end
 end
