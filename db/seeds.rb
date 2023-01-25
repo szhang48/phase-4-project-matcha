@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+
+
+Bio.destroy_all
+Post.destroy_all
+User.destroy_all
+
+
+
+
+
 puts "Seeding bios"
 b1 = Bio.create(name: 'John', location: 'Manhattan', description: 'hi', school: 'NYU', occupation: 'Student', dating_preference: 'Female')
 b2 = Bio.create(name: 'Chester', location: 'Miami', description: 'hi', school: 'FSU', occupation: 'Analyst', dating_preference: 'Female')
@@ -44,3 +54,4 @@ puts 'Done planting'
 #         school: 'Colombia University',
 #         occupation: 'Consultant',
 #         dating_preference: 'Male'
+
