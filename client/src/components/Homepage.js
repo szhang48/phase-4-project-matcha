@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import Nav from './Nav'
 
@@ -20,7 +21,9 @@ function Homepage() {
                   <p className="landing-page-second-content-container-p">Build your social dating experience now!</p>
                   <p className="landing-page-second-content-container-p">Click here to get started</p>
                 </div>
-                <button className=" get-started btn">Get Started</button>
+                <NavLink to="/signup">
+                  <button className="get-started btn">Get Started</button>
+                </NavLink>
               </div>
             </div>
           </div>

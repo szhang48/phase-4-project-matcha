@@ -1,0 +1,99 @@
+
+
+.top-bar-container {
+    height: 50px;
+    width: 100vw;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+    background: #065143;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.top-bar-left {
+    flex: 3;
+}
+
+.logo {
+    font-size: 30px;
+    margin-left: 30px;
+    font-weight: bold;
+    color: #92AA83;
+    cursor: pointer;
+}
+
+.search-icon {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.search-input {
+    border: none;
+    width: 70%;
+
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-bar {
+    width: 70%;
+    background-color: white;
+    height: 30px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-center {
+    flex: 5;
+}
+
+.top-bar-right {
+    flex: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+.top-bar-icons {
+    display: flex;
+}
+
+.top-bar-icon-item {
+    margin-right: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.top-bar-icon-badge {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
+}
+
+.top-bar-icon-style {
+    width: 25px;
+    height: 25px;
+    color: white;
+}
+
+.top-bar-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
