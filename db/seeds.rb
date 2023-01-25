@@ -34,8 +34,6 @@ p4 = Post.create(name: 'hi', content:'hi', picture: 'hi')
 p5 = Post.create(name: 'hi', content:'hi', picture: 'hi')
 p6 = Post.create(name: 'hi', content:'hi', picture: 'hi')
 
-
-
 puts "Seeding users"
 
 User.create(name: "Sandy", email: "abc@gmail.com", password: "123", post_id: p1.id, bio_id: b1.id)
