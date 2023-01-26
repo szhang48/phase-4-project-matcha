@@ -7,3 +7,5 @@ class Bio < ApplicationRecord
 
 
 end
+
+# hi
