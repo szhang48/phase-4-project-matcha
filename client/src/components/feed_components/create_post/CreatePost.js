@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import './createpost.css'
 import { BiPhotoAlbum, BiBookAdd, BiLocationPlus } from "react-icons/bi";
 
-function CreatePost() {
+function CreatePost({posts, setPosts}) {
     const name = "/feed/userid then grab name"
     const [content, setContent] = useState("")
     const [picture, setPicture] = useState("")
     const [showPicUrl, setShowPicUrl] = useState(false)
 
-    function createPost() {
+    function createPost(e) {
+        e.preventDefault()
         fetch("/posts", {
             method: "POST",
             headers: {
@@ -21,6 +22,8 @@ function CreatePost() {
                 picture: picture
             })
         })
+        .then(res => res.json())
+        .then(data => setPosts([...posts, data]))
     }
 
     console.log(content)
