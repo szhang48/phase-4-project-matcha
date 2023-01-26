@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './styles/sidebar.css'
 import { BiDollar } from "react-icons/bi";
 import { BiDonateHeart } from "react-icons/bi";
@@ -40,8 +41,10 @@ function Sidebar() {
                         <span className="side-bar-list-item-text">Subscription</span>
                     </li>
                     <li className="side-bar-list-item">
-                        <BiExit onClick={handleLogout} className="side-bar-icon"/>
-                        <span onClick={handleLogout} className="side-bar-list-item-text">Log Out</span>
+                        <NavLink to="/">
+                            <BiExit onClick={handleLogout} className="side-bar-icon"/>
+                            <span onClick={handleLogout} className="side-bar-list-item-text">Log Out</span>    
+                        </NavLink>
                     </li>
                 </ul>
                 <hr className="side-bar-hr"/>

@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
     def show
         user = User.find(session[:user_id])
-        byebug
         render json: user, status: :ok
     end
 

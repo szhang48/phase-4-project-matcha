@@ -8,14 +8,38 @@ import Feed from "./components/feed_components/Feed"
 import Bio from './components/feed_components/Bio'
 
 function App() {
+  const [user, setUser] = useState(null)
+
 
   useEffect(() => {
     fetch('/authorize')
-    .then(r => r.json())
-    .then(d => console.log(d))
+    .then(r => {
+      if(r.ok) {
+        r.json().then(user => {setUser(user)})
+      }
+      else {
+        r.json().then(() => setUser(null))
+      }
+    })
   }, [])
 
-  return (
+  if(user === null) return (
+    <>
+      <Switch>
+        <Route exact path="/">
+          <Homepage />
+        </Route>
+        <Route path="/login">
+          <Login setUser={setUser} user={user} />
+        </Route>
+        <Route path="/signup">
+          <Signup />
+        </Route>
+      </Switch>
+    </>
+  )
+
+  else if(user !== null)return (
       <Switch>
 
         <Route exact path="/">
