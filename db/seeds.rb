@@ -43,14 +43,3 @@ User.create(name: "Bob", email: "abc@gmail.com", password: "1236", post_id: p4.i
 User.create(name: "Rob", email: "abc@gmail.com", password: "1237", post_id: p5.id, bio_id: b5.id)
 User.create(name: "Sob", email: "abc@gmail.com", password: "1238", post_id: p6.id, bio_id: b6.id)
 puts 'Done planting'
-
-
-
-
-#         name: 'Michelle',
-#         location: 'Manhattan',
-#         description: 'hi',
-#         school: 'Colombia University',
-#         occupation: 'Consultant',
-#         dating_preference: 'Male'
-
