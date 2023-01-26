@@ -27,12 +27,12 @@ b6 = Bio.create(name: 'Jennifer', location: 'Seattle', description: 'hi', school
 
 puts "Seeding posts"
 
-p1 = Post.create(name: 'hi', content:'hi', picture: 'hi')
-p2 = Post.create(name: 'hi', content:'hi', picture: 'hi')
-p3 = Post.create(name: 'hi', content:'hi', picture: 'hi')
-p4 = Post.create(name: 'hi', content:'hi', picture: 'hi')
-p5 = Post.create(name: 'hi', content:'hi', picture: 'hi')
-p6 = Post.create(name: 'hi', content:'hi', picture: 'hi')
+p1 = Post.create(name: 'Bob', content:'I am Bob. Here is my favorite picture.', picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shaqi_jrvej.jpg/1200px-Shaqi_jrvej.jpg')
+p2 = Post.create(name: 'Sob', content:'I am Sob. I do not have a picture today.', picture: nil)
+p3 = Post.create(name: 'Mob', content:'I am Mob. I am a gangster. Here is a photo of my gang', picture: 'https://images.prismic.io/findmypast-titan/4cba48e4-8158-4c51-86ae-57089693ba61_real-peaky-blinders.jpg?auto=compress,format&rect=0,4,1182,566&w=1200&h=575')
+p4 = Post.create(name: 'Tob', content:'I am Tob. I am just Tob.', picture: 'http://static1.squarespace.com/static/5e42407b82936e5f26597c5e/t/5e42513dc2260c75ea31e80d/1581404480846/Screen+Shot+2020-02-10+at+11.00.50+PM.png?format=1500w')
+p5 = Post.create(name: 'Lob', content:'I am Lob. Here is a picture of a Lob.', picture: 'https://pbs.twimg.com/media/Dzp32CaVYAA9M51?format=jpg&name=large')
+p6 = Post.create(name: 'Wob', content:'I am Wob. I Wob corn.', picture: 'https://hips.hearstapps.com/hmg-prod/images/is-corn-grain-1544222258.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*')
 
 puts "Seeding users"
 
