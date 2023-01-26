@@ -3,7 +3,10 @@ import './createpost.css'
 import { BiPhotoAlbum, BiBookAdd, BiLocationPlus } from "react-icons/bi";
 
 function CreatePost() {
+    const name = "/feed/userid then grab name"
     const [content, setContent] = useState("")
+    const [picture, setPicture] = useState("")
+    const [showPicUrl, setShowPicUrl] = useState(false)
 
     function createPost() {
         fetch("/posts", {
@@ -13,8 +16,9 @@ function CreatePost() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                name: name,
                 content: content,
-                
+                picture: picture
             })
         })
     }
@@ -36,7 +40,8 @@ function CreatePost() {
                         <div className="create-post-options">
                             <div className="create-post-option">
                                 <BiPhotoAlbum className="create-post-icon"/>
-                                <span className="create-post-option-text">Photo/Video</span>
+                                <span onClick={() => setShowPicUrl(!showPicUrl)} className="create-post-option-text">Photo/Video</span>
+                                {showPicUrl ? <input type="text" onChange={(e) => setPicture(e.target.value)} /> : null}
                             </div>
                             <div className="create-post-option">
                                 <BiBookAdd className="create-post-icon"/>
@@ -47,7 +52,7 @@ function CreatePost() {
                                 <span className="create-post-option-text">Location</span>
                             </div>
                         </div>
-                        <button className="btn create-post-button">Post</button>
+                        <button onClick={createPost} className="btn create-post-button">Post</button>
                     </div>
                     
                 </div>

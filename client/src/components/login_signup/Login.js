@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 
 function Login() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
-    const [clickSignup, setClickSignup] = useState(true)
     const imgSrc = "https://cdn2.momjunction.com/wp-content/uploads/2019/03/55-Romantic-Date-Ideas-For-Couples-1.jpg"
+    const [errors, setErrors] = useState([])
+    const history = useHistory()
 
     function handleUsername(e) {
         setUsername(e.target.value)
@@ -16,18 +16,31 @@ function Login() {
         setPassword(e.target.value)
     }
 
-    function handleConfirmPassword(e) {
-        setConfirmPassword(e.target.value)
-    }
-
-    function handleClickSignup() {
-        setClickSignup(!clickSignup)
-    }
-
     function handleLogin(e) {
         e.preventDefault()
-        
+        fetch("/login", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: username,
+                password: password
+            })
+        })
+        .then(res => {
+            if(res.ok) {
+                res.json().then(user => {
+                    history.push(`/feed`)
+                })
+            }else {
+                res.json().then(json => setErrors(json.errors))
+            }
+        })
     }
+
+    console.log(errors)
 
     return(
         <>
@@ -46,7 +59,8 @@ function Login() {
                     <input type="password" name="password" onChange={handlePassword}></input>
                 </label>
                 <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-                    <button className="btn login-btn">Login</button>
+                    {errors&&<p className="error-p">{errors}</p>}
+                    <button onClick={handleLogin} className="btn login-btn">Login</button>
                     <div className="signup-text-container">
                         <text className="signup-text">Don't have an account?</text>
                         <NavLink to="/signup">
