@@ -8,6 +8,8 @@ import FeedContainer from './FeedContainer'
 
 function Bio() {
 
+    // fix diverged branches
+
     return (
         <div>  
             <TopBar />
