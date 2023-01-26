@@ -9,6 +9,12 @@ import { BiExit } from "react-icons/bi";
 
 function Sidebar() {
 
+    function handleLogout() {
+        fetch('/logout', {
+            method: 'DELETE'
+        })
+    }
+
     return (
         <div className="side-bar">
             <div className="side-bar-wrapper">
@@ -34,8 +40,8 @@ function Sidebar() {
                         <span className="side-bar-list-item-text">Subscription</span>
                     </li>
                     <li className="side-bar-list-item">
-                        <BiExit className="side-bar-icon"/>
-                        <span className="side-bar-list-item-text">Signout</span>
+                        <BiExit onClick={handleLogout} className="side-bar-icon"/>
+                        <span onClick={handleLogout} className="side-bar-list-item-text">Log Out</span>
                     </li>
                 </ul>
                 <hr className="side-bar-hr"/>

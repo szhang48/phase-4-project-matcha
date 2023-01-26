@@ -9,6 +9,12 @@ import Bio from './components/feed_components/Bio'
 
 function App() {
 
+  useEffect(() => {
+    fetch('/authorize')
+    .then(r => r.json())
+    .then(d => console.log(d))
+  }, [])
+
   return (
       <Switch>
 
