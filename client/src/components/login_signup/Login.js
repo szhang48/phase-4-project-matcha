@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 
-function Login() {
+function Login({setUser, user}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const imgSrc = "https://cdn2.momjunction.com/wp-content/uploads/2019/03/55-Romantic-Date-Ideas-For-Couples-1.jpg"
