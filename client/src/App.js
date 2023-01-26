@@ -5,6 +5,7 @@ import Homepage from "./components/Homepage"
 import Login from "./components/login_signup/Login"
 import Signup from "./components/login_signup/Signup"
 import Feed from "./components/feed_components/Feed"
+import Bio from './components/feed_components/Bio'
 
 function App() {
 
@@ -26,6 +27,11 @@ function App() {
         <Route path="/feed">
           <Feed />
         </Route>
+
+        <Route path="/bio/:id">
+          <Bio />
+        </Route>
+
       </Switch>
   );
 }
