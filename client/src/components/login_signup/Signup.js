@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 
 
 function Signup() {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [errors, setErrors] = useState([])
+    const history = useHistory()
 
     function handleUsername(e) {
         setUsername(e.target.value)
@@ -24,14 +26,23 @@ function Signup() {
         fetch("/users", {
             method: "POST",
             headers: {
-                // "Accept": "application/json",
+                "Accept": "application/json",
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name: "",
-                email:"",
-                password: ""
+                name: username,
+                email:email,
+                password: password
             })
+        })
+        .then(res => {
+            if(res.ok) {
+                res.json().then(user => {
+                    history.push(`/feed`)
+                })
+            }else {
+                res.json().then(json => setErrors(Object.entries(json.errors)))
+            }
         })
     }
 
