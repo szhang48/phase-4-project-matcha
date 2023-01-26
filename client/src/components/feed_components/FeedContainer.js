@@ -29,7 +29,7 @@ function FeedContainer() {
     return (
         <div className="feed-container">
             <div className="feed-wrapper">
-                <CreatePost />
+                <CreatePost setPosts={setPosts} posts={posts} />
                 <Posts />
                 {renderPosts}
             </div>

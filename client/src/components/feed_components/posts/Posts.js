@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import { useHistory } from 'react-router-dom'
+import React from 'react'
 import './posts.css'
 
 import { BiDotsVerticalRounded } from "react-icons/bi";
@@ -8,33 +7,7 @@ import { BiXCircle } from "react-icons/bi";
 import { MdOutlineReport } from 'react-icons/md'
 
 function Posts({name, content, picture}) {
-    const [errors, setErrors] = useState([])
-    const history = useHistory()
-
-    function handlePost(e) { 
-        e.preventDefault();
-        fetch("/posts", { 
-            method: "POST",
-            headers: {
-                "Accept": "application/json", 
-                "Content-Type": "application/json" 
-            }, 
-            body: JSON.stringify({
-                name: name, 
-                content: content, 
-                picture: picture, 
-            })
-        })
-        .then(res => { 
-            if(res.ok) { 
-                res.json().then(user => {
-                    history.push(`/feed`)
-            })
-        } else {
-            res.json().then(json => setErrors(Object.entries(json.errors)))
-            }
-        })
-    }
+   
 
     return(
         <div className="post-container">
