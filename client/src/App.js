@@ -12,8 +12,11 @@ import TopBar from './components/feed_components/TopBar'
 function App() {
   const [user, setUser] = useState(null)
   const [search, setSearch] = useState("")
+  const [searchQuery, setSearchQuery] = useState([])
 
-  //console.log(user)
+  function handleSearch() {
+    
+  }
 
   useEffect(() => {
     fetch('/authorize')
@@ -61,7 +64,7 @@ function App() {
         </Route>
 
         <Route path="/feed">
-          <Feed />
+          <Feed  search={search} setSearch={setSearch}/>
         </Route>
 
         <Route path="/bio/:id">
@@ -69,11 +72,7 @@ function App() {
         </Route>
 
         <Route path="/searchresults">
-          <SearchResultPage search={search} setSearch={setSearch}/>
-        </Route>
-
-        <Route >
-          <TopBar search={search} setSearch={setSearch}/>
+          <SearchResultPage search={search}/>
         </Route>
 
       </Switch>

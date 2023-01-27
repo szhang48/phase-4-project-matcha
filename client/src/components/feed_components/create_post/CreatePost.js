@@ -26,8 +26,6 @@ function CreatePost({posts, setPosts}) {
         .then(data => setPosts([...posts, data]))
     }
 
-    console.log(content)
-
     return (
         <div className="create-post-container">
             <div className="create-post">

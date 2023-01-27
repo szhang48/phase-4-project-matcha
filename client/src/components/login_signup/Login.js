@@ -32,7 +32,7 @@ function Login({setUser, user}) {
         .then(res => {
             if(res.ok) {
                 res.json().then(user => {
-                    history.push(`/feed`)
+                    history.push(`/bio/${user.id}`)
                 })
             }else {
                 res.json().then(json => setErrors(json.errors))

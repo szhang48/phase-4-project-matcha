@@ -5,10 +5,10 @@ import FeedContainer from './FeedContainer'
 import Rightbar from './Rightbar'
 import './styles/feed.css'
 
-function Feed() {
+function Feed({search, setSearch}) {
     return(
         <>
-            <TopBar />
+            <TopBar search={search} setSearch={setSearch}/>
             <div className="feed-body-container">
                 <Sidebar />
                 <FeedContainer />
