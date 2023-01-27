@@ -24,6 +24,8 @@ function App() {
     })
   }, [])
 
+  console.log(user)
+
   if(user === null) return (
     <>
       <Switch>
@@ -40,7 +42,7 @@ function App() {
     </>
   )
 
-  else if(user !== null)return (
+  else if(user !== null) return (
       <Switch>
 
         <Route exact path="/">

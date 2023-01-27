@@ -7,7 +7,6 @@ import { BiXCircle } from "react-icons/bi";
 import { MdOutlineReport } from 'react-icons/md'
 
 function Posts({name, content, picture}) {
-   
 
     return(
         <div className="post-container">
