@@ -6,6 +6,7 @@ import Posts from './posts/Posts'
 
 function FeedContainer() {
     const [posts, setPosts] = useState([])
+    const [userData, setUserData] = useState([])
 
     useEffect(() => {
         fetch('/posts')
@@ -13,6 +14,10 @@ function FeedContainer() {
         .then(d => setPosts(d))
         .catch(e => console.log(e))
     }, [])
+
+    // useEffect(() => {
+    //     fetch('/users')
+    // }, [])    
 
     const renderPosts = posts?.map((post) => {
         return (
@@ -22,6 +27,8 @@ function FeedContainer() {
                 name={post?.name}
                 content={post?.content}
                 picture={post?.picture}
+                setPosts={setPosts}
+                posts={posts}
             />
         )
     })

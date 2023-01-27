@@ -14,11 +14,11 @@ function Homepage() {
             <div className="landing-page-content">
               <div className="landing-page-text-content-container">
                 <h3 className="landing-page-text-content-h3">Welcome To Matcha</h3>
-                <p className="landing-page-text-content-p">Find people whose interest aligns with yours with a personalized social media feed that goes beyond social interaction!</p>
+                <p className="landing-page-text-content-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
               <div className="landing-page-second-content-container">
                 <div className="landing-page-second-p-container">
-                  <p className="landing-page-second-content-container-p">Build your social dating experience now!</p>
+                  <p className="landing-page-second-content-container-p"></p>
                   <p className="landing-page-second-content-container-p">Click here to get started</p>
                 </div>
                 <NavLink to="/signup">

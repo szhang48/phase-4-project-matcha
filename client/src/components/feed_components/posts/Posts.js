@@ -6,7 +6,7 @@ import { BiDonateHeart } from "react-icons/bi";
 import { BiXCircle } from "react-icons/bi";
 import { MdOutlineReport } from 'react-icons/md'
 
-function Posts({name, content, picture, id}) {
+function Posts({name, content, picture, id, setPosts, posts}) {
 
     function handleDelete(e) { 
         e.preventDefault(); 
@@ -16,7 +16,16 @@ function Posts({name, content, picture, id}) {
                 "Accept": "application/json", 
                 "Content-Type": "application/json"
             }, 
-        }) 
+        })
+        .then(r => {
+            setPosts((prevState) => {
+                return prevState.filter((post) => {
+                    return (
+                        post.id !== id
+                    )
+                })
+            })
+        })
         
     }
 
