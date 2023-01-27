@@ -30,9 +30,8 @@ function Bio() {
                         
                     </div>
                     <FeedContainer />
-                    <Rightbar />
                 </div>
-                
+                <Rightbar />
             </div>
         </div>
     )
