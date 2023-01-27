@@ -16,19 +16,10 @@ class UsersController < ApplicationController
     end
 
     def profile_photo
-        user = User.find_by(session[:user_id])
+        user = User.find_by(id: session[:user_id])
         user.update(profile_photo: params[:profile_photo])
         render json: user, status: :ok
     end
-
-    # def login
-    #     user = User.find_by(name:params[:name])
-    #     if user && user.authenticate(params[:password])
-    #         render json: user, status: :ok
-    #     else
-    #         render json: { errors: 'Incorrect user or password'}, status: 401
-    #     end
-    # end
 
     private 
     def user_params

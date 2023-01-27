@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get '/authorize', to: 'users#show'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  patch '/users/:id/profile_photo', to 'users#profile_photo'
+  patch '/users/:id/profile_photo', to: 'users#profile_photo'
 end
