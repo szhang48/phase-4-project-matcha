@@ -8,7 +8,7 @@ import './styles/feed.css'
 function Feed({search, setSearch}) {
     return(
         <>
-            <TopBar  search={search} setSearch={setSearch}/>
+            <TopBar search={search} setSearch={setSearch}/>
             <div className="feed-body-container">
                 <Sidebar />
                 <FeedContainer />

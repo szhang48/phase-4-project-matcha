@@ -10,7 +10,7 @@ function TopBar({setSearch, search}) {
     function handleSearchInput(e) {
         setSearch(e.target.value)
     }    
-
+    
     return (
         <div className="top-bar-container">
             <div className="top-bar-left">
@@ -20,10 +20,16 @@ function TopBar({setSearch, search}) {
             </div>
             <div className="top-bar-center">
                 <div className="search-bar">
-                    <button>
+                    <form>
+                        <button>
+                            <FaSearch className="search-icon"/>
+                        </button>
+                        <input onChange={(e) => setSearch(e.target.value)} placeholder="Find people or friends" className="search-input" />
+                    </form>
+                    {/* <button>
                         <FaSearch className="search-icon"/>
                     </button>
-                    <input onChange={(e) => {handleSearchInput(e)}} placeholder="Find people or friends" className="search-input" />
+                    <input onChange={(e) => {handleSearchInput(e)}} placeholder="Find people or friends" className="search-input" /> */}
                 </div>
             </div>
             <div className="top-bar-right">

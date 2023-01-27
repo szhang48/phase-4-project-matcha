@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized_user, only:[:create]
+    skip_before_action :authorized_user, only: [:create]
     
     def index 
         render json: User.all
@@ -13,6 +13,12 @@ class UsersController < ApplicationController
     def create 
         user = User.create!(user_params)
         render json: user, status: :created
+    end
+
+    def profile_photo
+        user = User.find_by(session[:user_id])
+        user.update(profile_photo: params[:profile_photo])
+        render json: user, status: :ok
     end
 
     # def login

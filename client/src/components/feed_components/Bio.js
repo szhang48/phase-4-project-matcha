@@ -1,14 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles/bio.css'
-
+import { useParams } from 'react-router-dom'
 import TopBar from './TopBar'
 import Sidebar from './Sidebar'
 import Rightbar from './Rightbar'
 import FeedContainer from './FeedContainer'
 
 function Bio() {
+    const [userData, setUserData] = useState([])
+    const [profilePhotoInput, setProfilePhotoInput] = useState("")
 
-    // fix diverged branches
+    let id = useParams()
+
+    useEffect(() => {
+        fetch(`/users/${id}`)
+        .then(r => r.json())
+        .then(d => setUserData(d))
+    }, [])
+
+    function handleAddProfilePhoto(e) {
+        e.preventDefault()
+        fetch(`/users/${id}/profile_photo`, {
+            method: 'PATCH',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                profile_photo: profilePhotoInput
+            })
+        })
+        .then(r => r.json())
+        .then(d => console.log(d))
+    }
+
+    function handleAddCoverPhoto() {
+
+    }
+
+    const renderProfilePhoto = userData.profile_photo ? userData.profile_photo : "https://images.nightcafe.studio//assets/profile.png?tr=w-1600,c-at_max"
+    const renderCoverPhoto = userData.cover_photo ? userData.cover_photo : "https://d2x3xhvgiqkx42.cloudfront.net/43cf6303-25b8-4c1e-9942-cb14f8fe611e/caa7233a-a6bf-4482-93a9-62ae52b515cc/2020/06/18/61cf6bfa-3e00-4ebf-ab37-0712958ec0ef/b4ffc494-e590-4d31-9b39-5aa9b3d98312.png"
 
     return (
         <div>  
@@ -18,13 +49,17 @@ function Bio() {
                 <div className="profile-right">
                     <div className="profile-right-top">
                         <div className="profile-cover">
-                            <img className="profile-cover-img" src="https://images.unsplash.com/photo-1623627484632-f041d1fb366d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y292ZXIlMjBwaG90b3xlbnwwfHwwfHw%3D&w=1000&q=80"/>
-                            <img className="profile-user-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU" />
-                        </div> 
+                            <img className="profile-cover-img" src={renderCoverPhoto}/>
+                            <img className="profile-user-img" src={renderProfilePhoto} />
+                        </div>
+                        <form className="add-profile-img" onSubmit={(e) => {handleAddProfilePhoto(e)}}>
+                            <input className="add-profile-img-input" onChange={(e) => setProfilePhotoInput(e.target.value)} type="text" placeholder="add profile image" />
+                            <button className="btn add-img-btn">Add</button>
+                        </form> 
                     </div>
                     <div className="profile-info">
-                        <h4 className="profile-info-name">Name</h4>
-                        <span className="profile-info-description">Description</span>
+                        <h4 className="profile-info-name">{userData.name}</h4>
+                        <span className="profile-info-description">{userData.email}</span>
                     </div>
                     <div className="profile-right-bottom">
                         
