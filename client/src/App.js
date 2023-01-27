@@ -10,6 +10,7 @@ import Bio from './components/feed_components/Bio'
 function App() {
   const [user, setUser] = useState(null)
 
+  console.log(user)
 
   useEffect(() => {
     fetch('/authorize')
