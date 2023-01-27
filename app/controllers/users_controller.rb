@@ -17,7 +17,13 @@ class UsersController < ApplicationController
 
     def profile_photo
         user = User.find_by(id: session[:user_id])
-        user.update(profile_photo: params[:profile_photo])
+        user.update_attribute(:profile_photo, params[:profile_photo])
+        render json: user, status: :ok
+    end
+
+    def cover_photo
+        user = User.find_by(id: session[:user_id])
+        user.update_attribute(:cover_photo, params[:cover_photo])
         render json: user, status: :ok
     end
 
