@@ -173,7 +173,7 @@ body {
   background-color: #2EE59D;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
-  transform: translateY(-7px);
+  transform: translateY(-3px);
 }
 
 /* Login Styling */
@@ -262,4 +262,9 @@ body {
 
 .error-p {
   color: red;
+}
+
+.navlink {
+  color: black;
+  font-weight: light;
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './styles/topbar.css'
 import { FaSearch } from 'react-icons/fa'
 import { BiBell } from 'react-icons/bi'
@@ -9,7 +10,9 @@ function TopBar() {
     return (
         <div className="top-bar-container">
             <div className="top-bar-left">
-                <span className="logo">MATCHA</span>
+                <NavLink to="/feed">
+                    <span className="logo">MATCHA</span>
+                </NavLink>
             </div>
             <div className="top-bar-center">
                 <div className="search-bar">
