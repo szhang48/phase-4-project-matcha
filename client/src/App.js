@@ -13,7 +13,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [search, setSearch] = useState("")
 
-  console.log(user)
+  //console.log(user)
 
   useEffect(() => {
     fetch('/authorize')
