@@ -11,20 +11,21 @@ function FeedContainer() {
         fetch('/posts')
         .then(r => r.json())
         .then(d => setPosts(d))
+        .catch(e => console.log(e))
     }, [])
 
     const renderPosts = posts?.map((post) => {
         return (
             <Posts
-                key={post.id} 
-                name={post.name}
-                content={post.content}
-                picture={post.picture}
+                key={post?.id} 
+                name={post?.name}
+                content={post?.content}
+                picture={post?.picture}
             />
         )
     })
 
-    console.log(posts)
+    // console.log(posts)
 
     return (
         <div className="feed-container">
