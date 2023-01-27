@@ -9,8 +9,15 @@ import FeedContainer from './FeedContainer'
 function Bio() {
     const [userData, setUserData] = useState([])
     const [profilePhotoInput, setProfilePhotoInput] = useState("")
+    const [coverPhotoInput, setCoverPhotoInput] = useState("")
+    const [displayAddProf, setDisplayAddProf] = useState(false)
+    const [displayAddCover, setDisplayAddCover] = useState(false)
 
-    let id = useParams()
+    const showAddProf = displayAddProf ? "add-profile-img" : "add-profile-img hidden"
+    const showAddCover = displayAddCover ? "add-profile-img" : "add-profile-img hidden"
+
+    let idObject = useParams()
+    const id = idObject.id
 
     useEffect(() => {
         fetch(`/users/${id}`)
@@ -31,14 +38,25 @@ function Bio() {
             })
         })
         .then(r => r.json())
-        .then(d => console.log(d))
+        .then(d => userData(d))
     }
-
-    function handleAddCoverPhoto() {
-
-    }
-
     console.log(userData)
+
+    function handleAddCoverPhoto(e) {
+        e.preventDefault()
+        fetch(`/users/${id}/cover_photo`, {
+            method: 'PATCH',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                cover_photo: coverPhotoInput
+            })
+        })
+        .then(r => r.json())
+        .then(d => setUserData(d))
+    }
 
     return (
         <div>  
@@ -48,11 +66,15 @@ function Bio() {
                 <div className="profile-right">
                     <div className="profile-right-top">
                         <div className="profile-cover">
-                            <img className="profile-cover-img" src={userData.profile_photo}/>
-                            <img className="profile-user-img" src={userData.cover_photo} />
+                            <img onClick={() => setDisplayAddCover(!displayAddCover)} className="profile-cover-img" src={userData.cover_photo}/>
+                            <img onClick={() => setDisplayAddProf(!displayAddProf)} className="profile-user-img" src={userData.profile_photo} />
                         </div>
-                        <form className="add-profile-img" onSubmit={(e) => {handleAddProfilePhoto(e)}}>
+                        <form className={showAddProf} onSubmit={(e) => {handleAddProfilePhoto(e)}}>
                             <input className="add-profile-img-input" onChange={(e) => setProfilePhotoInput(e.target.value)} type="text" placeholder="add profile image" />
+                            <button className="btn add-img-btn">Add</button>
+                        </form> 
+                        <form className={showAddCover} onSubmit={(e) => {handleAddCoverPhoto(e)}}>
+                            <input className="add-profile-img-input" onChange={(e) => setCoverPhotoInput(e.target.value)} type="text" placeholder="add cover photo" />
                             <button className="btn add-img-btn">Add</button>
                         </form> 
                     </div>

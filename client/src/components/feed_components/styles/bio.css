@@ -13,6 +13,7 @@
 .profile-cover {
     height: 320px;
     position: relative;
+    z-index: 10;
 }
 
 .profile-cover-img {
@@ -65,4 +66,8 @@
 .add-img-btn {
     margin-left: 10px;
     width: 100px;
+}
+
+.hidden {
+    display: none;
 }

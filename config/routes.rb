@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   patch '/users/:id/profile_photo', to: 'users#profile_photo'
+  patch '/users/:id/cover_photo', to: 'users#cover_photo'
 end
