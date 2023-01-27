@@ -6,9 +6,12 @@ import Login from "./components/login_signup/Login"
 import Signup from "./components/login_signup/Signup"
 import Feed from "./components/feed_components/Feed"
 import Bio from './components/feed_components/Bio'
+import SearchResultPage from './components/feed_components/SearchResultPage'
+import TopBar from './components/feed_components/TopBar'
 
 function App() {
   const [user, setUser] = useState(null)
+  const [search, setSearch] = useState("")
 
   console.log(user)
 
@@ -63,6 +66,14 @@ function App() {
 
         <Route path="/bio/:id">
           <Bio />
+        </Route>
+
+        <Route path="/searchresults">
+          <SearchResultPage search={search} setSearch={setSearch}/>
+        </Route>
+
+        <Route >
+          <TopBar search={search} setSearch={setSearch}/>
         </Route>
 
       </Switch>

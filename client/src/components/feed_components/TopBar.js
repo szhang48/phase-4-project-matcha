@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import './styles/topbar.css'
 import { FaSearch } from 'react-icons/fa'
 import { BiBell } from 'react-icons/bi'
 import { AiFillMessage } from 'react-icons/ai'
 
-function TopBar() {
+function TopBar({setSearch, search}) {
+
+    
 
     return (
         <div className="top-bar-container">
@@ -19,7 +21,7 @@ function TopBar() {
                     <button>
                         <FaSearch className="search-icon"/>
                     </button>
-                    <input placeholder="Search for common interests" className="search-input" />
+                    <input onChange={(e) => {setSearch(e.target.value)}} placeholder="Find people or friends" className="search-input" />
                 </div>
             </div>
             <div className="top-bar-right">

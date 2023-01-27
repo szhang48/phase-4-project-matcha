@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     before_action :set_post, only: [:index, :create, :update, :destroy]
     
     def index
-        render json: Post.all 
+        render json: Post.all, status: :ok
     end
 
     def create
