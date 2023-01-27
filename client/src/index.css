@@ -31,7 +31,7 @@ body {
   font-family: system-ui;
   font-weight: 500;
   letter-spacing: 5px;
-  margin-right: 75px;
+  margin-left: 450px;
 }
 
 .nav-items {
@@ -44,7 +44,7 @@ body {
 
 .login-signup {
   color: #FFFFFF;
-  margin-left: 600px;
+  margin-left: 700px;
   padding: 15px;
   background-color: #92AA83;
   width: 76px;
@@ -184,7 +184,7 @@ body {
   justify-content: center; */
   width: 100vw;
   height: 100vh;
-  background: url("https://cdn2.momjunction.com/wp-content/uploads/2019/03/55-Romantic-Date-Ideas-For-Couples-1.jpg");
+  background: url("https://www.brides.com/thmb/J7NIJE4YodwNepfPEq2k05mg6Ek=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1327250679-87b056fc9d484c689e08a21a12197b30.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
