@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     end
 
     skip_before_action :authorized_user, only: [:index]
+
     
     def index
         render json: Post.all, status: :ok
@@ -17,8 +18,9 @@ class PostsController < ApplicationController
     end
 
     def update 
-        @post.update!(post_params)
-        render json: post, status: :accepted 
+        post = Post.find(params[:id])
+        post.update(post_params)
+        render json: post, status: :ok
     end
 
     def destroy
