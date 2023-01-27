@@ -6,20 +6,19 @@ import { BiDonateHeart } from "react-icons/bi";
 import { BiXCircle } from "react-icons/bi";
 import { MdOutlineReport } from 'react-icons/md'
 
-function Posts({name, content, picture}) {
+function Posts({name, content, picture, id}) {
 
-    // function handDelete(e) { 
-    //     e.preventDefault(); 
-    //     fetch("/posts", { 
-    //         method: "delete",
-    //         headers: { 
-    //             "Accept": "application/json", 
-    //             "Content-Type": "application/json"
-    //         }, 
-    //     }) 
-    //     .then(res => res.json())
-    //     .then(data => console.log(data))
-    // }
+    function handleDelete(e) { 
+        e.preventDefault(); 
+        fetch(`/posts/${id}`, { 
+            method: "DELETE",
+            headers: { 
+                "Accept": "application/json", 
+                "Content-Type": "application/json"
+            }, 
+        }) 
+        
+    }
 
 
     return(
@@ -43,7 +42,7 @@ function Posts({name, content, picture}) {
                     <div className='post-bottom'>
                         <div className="post-bottom-left">
                             <BiDonateHeart className="post-icon-1"/>
-                            <BiXCircle  className="post-icon-2"/>
+                            <BiXCircle onClick={handleDelete}  className="post-icon-2"/>
                         </div>
                         <div className="post-bottom-right">
                             <MdOutlineReport className="post-icon-3"/>

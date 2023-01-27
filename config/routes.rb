@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :posts, only: [:index, :create, :update, :destroy]
+  resources :posts, only: [:index, :show, :create, :update, :destroy]
   resources :users, only: [:index,:create ]
   resources :bios, only: [:index, :show, :create ]
   get '/authorize', to: 'users#show'
