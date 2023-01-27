@@ -21,8 +21,10 @@ function Sidebar() {
             <div className="side-bar-wrapper">
                 <ul className="side-bar-list">
                     <li className="side-bar-list-item">
+                    <NavLink className="navlink" to="/bio/1">
                         <BiUser className="side-bar-icon"/>
                         <span className="side-bar-list-item-text">Profile</span>
+                    </NavLink>
                     </li>
                     <li className="side-bar-list-item">
                         <BiHeart className="side-bar-icon"/>
@@ -41,7 +43,7 @@ function Sidebar() {
                         <span className="side-bar-list-item-text">Subscription</span>
                     </li>
                     <li className="side-bar-list-item">
-                        <NavLink to="/">
+                        <NavLink className="navlink" to="/">
                             <BiExit onClick={handleLogout} className="side-bar-icon"/>
                             <span onClick={handleLogout} className="side-bar-list-item-text">Log Out</span>    
                         </NavLink>
