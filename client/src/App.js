@@ -13,8 +13,6 @@ function App() {
   const [user, setUser] = useState(null)
   const [search, setSearch] = useState("")
 
-  //console.log(user)
-
   useEffect(() => {
     fetch('/authorize')
     .then(r => {
@@ -26,8 +24,6 @@ function App() {
       }
     })
   }, [])
-
-  console.log(user)
 
   if(user === null) return (
     <>
@@ -61,7 +57,7 @@ function App() {
         </Route>
 
         <Route path="/feed">
-          <Feed />
+          <Feed  search={search} setSearch={setSearch}/>
         </Route>
 
         <Route path="/bio/:id">
@@ -70,10 +66,6 @@ function App() {
 
         <Route path="/searchresults">
           <SearchResultPage search={search} setSearch={setSearch}/>
-        </Route>
-
-        <Route >
-          <TopBar search={search} setSearch={setSearch}/>
         </Route>
 
       </Switch>

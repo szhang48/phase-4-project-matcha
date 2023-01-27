@@ -7,7 +7,9 @@ import { AiFillMessage } from 'react-icons/ai'
 
 function TopBar({setSearch, search}) {
 
-    
+    function handleSearchInput(e) {
+        setSearch(e.target.value)
+    }    
 
     return (
         <div className="top-bar-container">
@@ -21,7 +23,7 @@ function TopBar({setSearch, search}) {
                     <button>
                         <FaSearch className="search-icon"/>
                     </button>
-                    <input onChange={(e) => {setSearch(e.target.value)}} placeholder="Find people or friends" className="search-input" />
+                    <input onChange={(e) => {handleSearchInput(e)}} placeholder="Find people or friends" className="search-input" />
                 </div>
             </div>
             <div className="top-bar-right">

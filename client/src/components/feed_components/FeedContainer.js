@@ -14,7 +14,10 @@ function FeedContainer() {
         .catch(e => console.log(e))
     }, [])
 
+    console.log(posts)
+
     const renderPosts = posts?.map((post) => {
+        console.log(post.id)
         return (
             <Posts
                 key={post?.id} 
