@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
 
+    def show
+        current_user = User.find_by(name:params[:name])
+        render :show
+    end
+
     before_action :set_post, only: [:index, :create, :update, :destroy]
     
     def index
