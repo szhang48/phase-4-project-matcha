@@ -1,9 +1,6 @@
 class PostsController < ApplicationController
 
-    def show
-        current_user = User.find_by(name:params[:name])
-        render :show
-    end
+   
 
     skip_before_action :authorized_user, only: [:index]
 
