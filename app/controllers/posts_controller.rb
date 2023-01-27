@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-    before_action :set_post, only: [:index, :create, :update, :destroy]
+    # before_action :set_post, only: [:index, :create, :update, :destroy]
     
     def index
         render json: Post.all, status: :ok
@@ -12,8 +12,9 @@ class PostsController < ApplicationController
     end
 
     def update 
-        @post.update!(post_params)
-        render json: post, status: :accepted 
+        post = Post.find(params[:id])
+        post.update(post_params)
+        render json: post, status: :ok
     end
 
     def destroy
