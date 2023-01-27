@@ -20,7 +20,8 @@ function FeedContainer() {
         console.log(post.id)
         return (
             <Posts
-                key={post?.id} 
+                key={post?.id}
+                id={post?.id} 
                 name={post?.name}
                 content={post?.content}
                 picture={post?.picture}
